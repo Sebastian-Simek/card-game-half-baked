@@ -4,7 +4,6 @@ import { useCardContext } from './ContextProvider';
 
 export default function Player({ player, hand }) {
   const { setTo, setFrom, setSelectedCard, selectedCard, to } = useCardContext();
-  console.log(hand);
   return (
     <div
       className={`player ${to === player ? 'selected-player' : ''}`}
