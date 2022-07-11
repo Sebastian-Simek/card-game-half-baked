@@ -10,7 +10,6 @@ const suitMap = {
 
 export default function Card({ card }) {
   const { selectedCard, setSelectedCard, setFrom, player } = useCardContext();
-  console.log(card);
 
   function handleCardClick() {
     setFrom(player);
@@ -19,7 +18,7 @@ export default function Card({ card }) {
 
   // if there IS a selected card, and it has the same value and suit as THIS card, style it differently
   const thisIsTheSelectedCard =
-    selectedCard && selectedCard.value === card.value && selectedCard.suit === card.suit;
+    selectedCard && card && selectedCard.value === card.value && selectedCard.suit === card.suit;
 
   return (
     <div className={`${thisIsTheSelectedCard ? 'selected' : ''} card`} onClick={handleCardClick}>
